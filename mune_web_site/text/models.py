@@ -10,6 +10,7 @@ class MainTitle(models.Model):
     location_text = models.CharField(max_length=25)
     location = models.CharField(max_length=500)
 
+
 class MiddleTitleText(models.Model):
     main_text = models.CharField(max_length=150,verbose_name='главный текст в середине ')
     description = models.TextField(null=True,blank=True)
