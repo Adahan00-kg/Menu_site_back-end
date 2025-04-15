@@ -1,11 +1,16 @@
 from rest_framework import generics
 from .models import MenuItem, Category
-from .serializers import MenuItemListSerializer, CategorySerializer,MenuItemDetailSerializer
+from .serializers import MenuItemListSerializer, CategoryListSerializer,MenuItemDetailSerializer,CategoryDetailSerializer
 
 
-class CategoryViewSet(generics.ListAPIView):
+class CategoryListViewSet(generics.ListAPIView):
     queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+    serializer_class = CategoryListSerializer
+
+
+class CategoryDetailViewSet(generics.RetrieveAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategoryDetailSerializer
 
 
 class MenuItemListViewSet(generics.ListAPIView):

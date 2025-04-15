@@ -3,27 +3,35 @@ from .models import *
 
 
 
-class CategorySerializer(serializers.ModelSerializer):
+class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['category_name']
+        fields = ['id','category_name']
 
 
 class MenuItemListSerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuItem
-        fields = ['title','description','price','image','category_connect']
+        fields = ['id','title','description','price','image','category_connect']
 
+
+class CategoryDetailSerializer(serializers.ModelSerializer):
+    items = MenuItemListSerializer(many=True)
+    class Meta:
+        model = Category
+        fields = ['id','category_name','items']
 
 
 class ExtrasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Extras
-        fields = ['extra_price','extra_name']
+        fields = ['id','extra_price','extra_name']
 
 
 class MenuItemDetailSerializer(serializers.ModelSerializer):
     extra = ExtrasSerializer(many=True)
     class Meta:
         model = MenuItem
-        fields = ['title','description','price','image','category_connect','extra']
+        fields = ['id','title','description','price','image','category_connect','extra']
+
+
