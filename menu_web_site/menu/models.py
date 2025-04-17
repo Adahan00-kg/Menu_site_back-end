@@ -27,3 +27,7 @@ class Extras(models.Model):
 
     def __str__(self):
         return f'{self.extra_name}'
+
+
+class name:
+    pass
