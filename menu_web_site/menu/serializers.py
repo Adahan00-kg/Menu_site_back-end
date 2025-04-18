@@ -6,7 +6,7 @@ from .models import *
 class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['id','category_name']
+        fields = ['id', 'category_name']
 
 
 class MenuItemListSerializer(serializers.ModelSerializer):
