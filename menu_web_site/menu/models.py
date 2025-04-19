@@ -29,5 +29,4 @@ class Extras(models.Model):
         return f'{self.extra_name}'
 
 
-class name:
-    pass
+
